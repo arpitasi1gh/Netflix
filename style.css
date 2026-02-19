@@ -3,9 +3,11 @@
 }
 #header {
   background-image: url("assets/bg.jpg");
-  width: 100%;
+  max-width: 99%;
   height: 90vh;
   background-size: cover;
+  background-position: center;
+  object-fit: cover;
 }
 #nflogo {
   width: 19.5vh;
@@ -14,7 +16,7 @@
 }
 .box {
   background-color: rgba(0, 0, 0, 0.639);
-  width: 100%;
+  max-width: 100%;
   height: 90vh;
 }
 #leftnb {
@@ -83,8 +85,11 @@ h1 {
   border: 0.1rem solid #ffffff47;
   border-radius: 0.2rem;
   margin-top: 1rem;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.498);
   color: white;
+}
+input#email:focus {
+  background: rgba(0, 0, 0, 0.498);
 }
 #getstarted {
   background-color: #e50914;
@@ -155,7 +160,6 @@ h2 {
   width: 35%;
 }
 #sf3 {
-  margin: 7vh 0 0 18vh;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   margin: 5vh 0 0 18vh;
@@ -189,9 +193,13 @@ li {
   font-family: Helvetica, sans-serif;
 }
 #cards, .card {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 1rem;
+}
+#cards {
+  overflow: auto;
 }
 .card:hover {
   transform: scale(1.04);
@@ -245,11 +253,17 @@ li {
   padding: 1.5rem;
   border-radius: 0.5rem;
 }
-#moves {
+ #moves {
   display: flex;
-  flex-direction: row;
   gap: 1rem;
-  margin-right: 18vh;
+  margin: 2rem 8vw;
+  flex-wrap: wrap;
+}
+.move {
+  flex: 1 1 200px;
+  min-width: 200px;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
 }
 #footer {
   margin-top: 8vh;
@@ -263,7 +277,48 @@ li {
 #signin:active, #getstarted:active {
   background-color: #bc0c14;
 }
-.move, #moves {
-  width: 78.25rem;
-  height: auto;
+@media (max-width: 2600px) {
+  #leftnb, #sf3, #sf6, .sf5, h2, #cards, #moves {
+    margin-left: 5vw;
+  }
+}
+@media (max-width: 960px) {
+  #nflogo {
+    width: 11vh;
+    margin: 1vh 0 0 6vh;
+  }
+  #header, .box {
+    height: 40vh;
+  }
+  #leftnb, #sf3, #sf6, .sf5, h2, #cards, #moves {
+    margin-left: 5vw;
+  }
+  h1 {
+    font-size: 2.1rem;
+  }
+  #a {
+    margin-top: 8vh;
+  }
+  #sh1 {
+    font-size: 0.9rem;
+  }
+  #sh2 {
+    font-size: 0.7rem;
+    margin-top: 1.2rem;
+  }
+  #email {
+    width: 27%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  #getstarted {
+    padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  #sicon {
+    font-size: 1.2rem;
+  }
+  div#part1 {
+    overflow: auto;
+  }
 }
